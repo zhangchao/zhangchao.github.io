@@ -12,3 +12,9 @@ My name is Zhang Chao, living in ShangHai city.
 
 
 ####Resume
+<ul>
+  <li ng-repeat="message in messages">
+    <input ng-model="message.text" ng-change="messages.$save(message)" />
+    <button ng-click="messages.$remove(message)">X</button>
+  </li>
+</ul>
