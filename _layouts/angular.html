@@ -1,0 +1,34 @@
+<html ng-app="sampleApp">
+  <head>
+     <title>
+      {{ page.title }}
+    </title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/blog.css" rel="stylesheet">
+  </head>
+  <body ng-controller="SampleCtrl">
+     <div>
+	  {{ content }}
+	 </div>
+    <ul>
+      <li ng-repeat="message in messages">
+        <!-- exit a message -->
+        <input ng-model="message.text" ng-change="messages.$save(message)" />
+        <!-- delete message -->
+        <button ng-click="messages.$remove(message)">X</button>
+      </li>
+    </ul>
+    <!-- push a new message into the array -->
+    <form ng-submit="addMessage(newMessageText)">
+      <input ng-model="newMessageText" />
+      <button type="submit">add message</button>
+    </form>
+	
+	<script src="js/angular.min.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/angularfire.min.js"></script>
+	<script src="js/zc_app.js"></script>
+  </body>
+</html>

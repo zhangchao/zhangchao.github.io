@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: angular
 title: "关于：About"
 ---
 ####Basic Info
