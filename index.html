@@ -1,26 +1,27 @@
 ---
-layout: cool
+layout: default_v2
 title: "Zhang Chao's Blog"
 ---
 <h1 class="page-header">
   Zhang Chao's Blog
   <small>
-    Android, Linux, Java, reading...
+    Android, Linux, Java, Web...
   </small>
 </h1>
+
 {% for post in paginator.posts %}
 <h2>
   <a href="{{ post.url }}">
     {{ post.title }}
   </a> 
-  <div class="post-date">
+  <div class="post-date" style="float:right">
 	<span class="glyphicon glyphicon-time"></span>
 	{{ post.date | date_to_string }}
   </div>
 </h2>
 <hr>
 {{ post.content }}
-<hr>
+
 {% endfor %}
 <!-- Pager -->
 <ul class="pager">
