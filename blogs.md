@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "归档：Archives"
+layout: default_v2
+title: "Blog"
 ---
 <ul class="list-unstyled">
      {% for post in site.posts limit:100 %} 

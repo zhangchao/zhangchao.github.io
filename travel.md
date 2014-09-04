@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "分类：Categories"
+layout: default_v2
+title: "Work"
 ---
 <ul class="list-unstyled">
 {% for cat in site.categories %} 
