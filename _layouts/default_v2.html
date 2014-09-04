@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sampleApp">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="My Blog">
+<meta name="author" content="Zhang Chao">
+<title>
+    {{ page.title }}
+</title>
+<!-- Bootstrap Core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cool.css" rel="stylesheet">
+</head>
+
+<body class="page-blog-extend page-blog-post page-blog page-tertiary page" ng-controller="SampleCtrl">
+
+<div role="main">
+    <section class="content-primary content">
+        <div class="wrapper">
+            <header class="content-primary-header header">
+                <h1><span class="left">Developer</span> <a href="/extend"><span
+                        class="visuallyhidden">Extend,</span></a> <span
+                        class="right">Operation</span></h1>
+            </header>
+
+            <section class="section-blog-wrapper section row stickem-container">
+                <div class="col-10 col">
+                    <article class="article-blog-post article hentry row">
+                        <div class="article-blog-post-wrapper wrapper col-8 col right">
+                            {{ content }}
+                        </div>
+                        <aside class="aside-blog-post aside col-2 col stickem">
+
+                            <section class="section-author section author vcard clear">
+
+                                <figure class="photo-frame-no-border photo-frame encircle">
+                                    <img src="/image/self.JPG"
+                                         alt="Zhang Chao" class="photo">
+                                </figure>
+
+                                <div class="author-meta">
+                                    <span class="fn">Zhang Chao</span>
+                                    <span class="role"> Developer</span>
+                                    <ul class="grouping-blog-links grouping">
+                                        <li><a href="https://www.linkedin.com/in/superchaozhang">Profile</a></li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <div class="social-sharing-widget">
+                                <div class="widget-header clear">
+                                    <div class="">Facebook</span>
+                                    <div class="">Twitter</span>
+                                    <div class="">Google+</span>
+                                </div>
+                            </div>
+					    <div class="social-sharing-widget">
+							<!-- push a new message into the array -->
+							<form ng-submit="addMessage(newMessageText)">
+							  <input ng-model="newMessageText" type="text" name="q" class="form-control" />
+							  <button type="submit" class="btn btn-default">FeedBack</button>
+							</form>
+	                    </div>
+                        </aside>
+                    </article>
+                </div>
+                <aside class="aside col-2 col">
+
+                    <section class="section-blog-navigation section-blog-module section">
+                        <header class="section-header header">
+                            <h1>My Self:</h1>
+                            <a href="http://feeds.feedburner.com/VigetExtend"
+                               class="light-rss-button rss-button button ir" rel="alternate" type="application/rss+xml"
+                               data-track-event="Extend Post,RSS">RSS</a>
+                        </header>
+                        <div class="section-content section">
+                            <p class="blog-description">Like <b>Code &amp; Design</b>. Primarily written by Java, Andorid, and front-end developers.</p>
+                            <form class="search-form form" id="search-form"
+                                  action="https://github.com/zhangchao/zhangchao.github.io/search" method="get">
+                                        <label>Search</label>
+                                        <div class="input-group">
+                                            <input type="text" name="q" class="form-control">
+                                            <input type="hidden" name="ie" value="UTF-8"/>
+                                            <span class="input-group-btn">
+                                              <button class="btn btn-default" type="submit">
+                                                <span class="glyphicon glyphicon-search">
+                                                </span>
+                                              </button>
+                                            </span>
+                                        </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <hr class="chevrons">
+                    <section class="section-blog-navigation section-blog-module section">
+                        <header class="section-header header">
+                            <h1>Category</h1>
+                        </header>
+                        <div class="section-content section">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="/categories.html#docker">
+                                                Docker
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/categories.html#linux">
+                                                Linux
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/categories.html#java">
+                                                Java
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/categories.html#web">
+                                                Web
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /.col-lg-6 -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </section>
+
+                </aside>
+            </section>
+        </div>
+    </section>
+</div>
+
+<header class="global-header" id="global-header" role="banner">
+    <div class="wrapper clear">
+	    <img src="/image/logo.jpg" style="float:left;width:35px;height:35px">
+        <!--<a href="#" class="logo ir" rel="home">ZhangChao</a>-->
+        <nav class="nav-primary nav">
+            <ul class="clear">
+                <li class="nav-item-about nav-item"><a href="/about.html">ME</a>
+                </li>
+				<li class="nav-item-blogs nav-item-current nav-item"><a href="/blogs.html">Blogs</a>
+                </li>
+                <li class="nav-item-work nav-item"><a href="/travel.html" >Travel</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<footer class="global-footer" id="global-footer">
+    <nav class="nav-primary nav">
+        <div class="wrapper">
+            <ul class="row">
+                <li class="col-2 col-offset-2 col">
+                    <h1><a href="/about" data-track-event="Footer,About,About">About</a></h1>
+                    <ul>
+                        <li><a href="/about#locations" data-track-event="Footer,About,Locations">Location</a></li>
+                        <li><a href="/about#team" data-track-event="Footer,About,Team">Team</a></li>
+                        <li><a href="/about#careers" data-track-event="Footer,About,Careers">Careers</a></li>
+                    </ul>
+                </li>
+                <li class="col-2 col">
+                    <h1><a href="/work" data-track-event="Footer,Work,Work">Working</a></h1>
+                    <ul>
+                        <li><a href="http://www.hp.com" data-track-event="Footer,Work,Services">Hewlett-Packard</a></li>
+                        <li><a href="http://www.ebay.com" data-track-event="Footer,Work,Services">eBay</a></li>
+                        <li><a href="http://www.shanghaiebest.com" data-track-event="Footer,Work,Services">ebest</a></li>
+                        <li><a href="#" data-track-event="Footer,Work,Portfolio">SinoBull</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-lg-12">
+            <p align="center">
+                <font size=2px>
+                    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1253186355'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1253186355%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+                </font>
+                <br/>
+                Copyright &copy; github.com/zhangchao 2014, hosted on GitHub, built with Jekyll, fork the <a
+                    href="https://github.com/zhangchao/zhangchao.github.io">source</a> or follow me on <a
+                    href="https://github.com/zhangchao">GitHub</a> will be welcomed!
+                <br/>
+            </p>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</footer>
+<script src="/js/jquery-1.11.0.js">
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js">
+</script>
+<script src="/js/angular.min.js"></script>
+<script src="/js/firebase.js"></script>
+<script src="/js/angularfire.min.js"></script>
+<script src="/js/zc_app.js"></script>
+</body>
+
+</html>

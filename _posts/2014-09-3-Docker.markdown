@@ -1,0 +1,38 @@
+* And image cleanup script: 
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -a -q)
+
+*
+docker run -i  -p 40080:1337  zhangchao/nodejs-bower-grunt:v1 node test.js
+
+docker ps -a 
+docker commit  512a85448064 zhangchao/nodejs-bower-grunt:v1
+
+dcoker start 
+docker attach 
+
+
+
+FROM ubuntu:12.04
+MAINTAINER Dan Sosedoff "dan.sosedoff@gmail.com"
+
+# Update system
+RUN apt-get update -y
+RUN apt-get upgrade -y
+
+# Setup SSH server
+RUN apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+
+# Start SSH server
+CMD /usr/sbin/sshd -D
+
+
+EXPOSE 22
+docker run -p 42222:22 
+VBoxManage modifyvm "boot2docker-vm" --natpf1 "containerssh,tcp,,42222,,42222"
+
+
+CONTAINER ID        IMAGE                             COMMAND             CREATED             STATUS                          PORTS                     NAMES
+f4c778428715        zhangchao/nodejs-bower-grunt:v2   "node test.js"      28 seconds ago      Up 28 seconds                   0.0.0.0:40080->1337/tcp   zhangnode1
