@@ -1,0 +1,96 @@
+
+# Linux SSH #
+#
+
+
+
+**INSTALL:**
+
+> sudo apt-get install openssh-server 
+> 
+> sudo vim /etc/ssh/sshd_config
+> 
+> $ sudo /etc/init.d/ssh start or $ sudo service ssh start
+
+- To disable password authentication:
+
+
+	    PasswordAuthentication yes
+	    
+	    replace it with a line that looks like this:
+	    
+	    PasswordAuthentication no
+
+
+- X11 forwarding tunnel specific graphical applications through an SSH session
+
+		AllowTcpForwarding yes
+		X11Forwarding yes
+
+- Allow and Deny
+
+		AllowUsers Fred Wilma
+		DenyUsers Dino Pebbles
+
+- Logger
+
+		LogLevel INFO
+		LogLevel VERBOSE
+        /var/log/auth.log file.
+
+
+**Important Files :**
+
+> /etc/apt/sources.list
+>  
+> /etc/sysctl.conf
+
+
+**ERROR:**
+
+
+> apt-get update
+
+GPG error: http://de.archive.ubuntu.com lucid Release: The following signatures were invalid: BADSIG 40976EAF437D05B5
+
+Solution 1:
+
+	sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5
+
+Note: This maybe dangerous in a situation where somebody is trying to do something nasty (mMan-in-the-middle attack for example). So please only add kyes you trust.
+
+Solution 2:
+
+	 apt-get clean
+	 cd /var/lib/apt
+	 mv lists lists.old
+	 mkdir -p lists/partial
+	 apt-get clean
+	 apt-get update
+
+
+**Start:**
+
+/etc/rc.local
+
+
+/etc/profile
+
+	JAVA_HOME=/usr/share/jdk1.5.0_05
+	PATH=$JAVA_HOME/bin:$PATH
+	CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+	export JAVA_HOME
+	export PATH
+	export CLASSPATH
+
+
+.bashrc　
+
+	set JAVA_HOME=/usr/share/jdk1.5.0_05
+	export JAVA_HOME
+	set PATH=$JAVA_HOME/bin:$PATH
+	export PATH
+	set CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+	export CLASSPATH
+
+

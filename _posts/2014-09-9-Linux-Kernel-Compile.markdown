@@ -1,4 +1,18 @@
+---
+layout: default
+category: Linux
+tags: Linux
+
+title: Linux Kernel Compile
+subtitle: How to compile Linux
+image: /images/team/young.jpg
+twitter: zhangchao
+github: zhangchao
+---
+
 # CentOS下Linux内核 #
+
+9/9/2014 5:02:29 PM 
 
 - 安装依赖
 
