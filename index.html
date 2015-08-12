@@ -1,7 +1,14 @@
 ---
-layout: default_v2
+layout: default
 title: "Zhang Chao's Blog"
+tagline: Zhang Chao since 2009.
 ---
+{% include JB/setup %}
+
+## Profiles
+
+github: [http://github.com/zhangchao](http://github.com/zhangchao)!
+
 <h1 class="page-header">
   Zhang Chao's Blog
   <small>
@@ -9,39 +16,18 @@ title: "Zhang Chao's Blog"
   </small>
 </h1>
 
-{% for post in paginator.posts %}
+{% for post in site.posts %}
 <h2>
   <a href="{{ post.url }}">
     {{ post.title }}
-  </a> 
+  </a>
   <div class="post-date" style="float:right">
 	<span class="glyphicon glyphicon-time"></span>
 	{{ post.date | date_to_string }}
   </div>
 </h2>
-<hr>
-{{ post.content }}
+
+<article>{{ post.excerpt }}</article>
 
 {% endfor %}
-<!-- Pager -->
-<ul class="pager">
-  {% if paginator.previous_page %} {% if paginator.previous_page == 1 %}
-  <li class="previous">
-    <a href="{{ site.url }}/">
-      &larr; Older
-    </a>
-  </li>
-  {% else %}
-  <li class="previous">
-    <a href="{{ site.url }}/page{{ paginator.previous_page }}">
-      &larr; Older
-    </a>
-  </li>
-  {% endif %} {% endif %} {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ site.url }}/page{{ paginator.next_page }}">
-      Newer &rarr;
-    </a>
-  </li>
-  {% endif %}
-</ul>
+
