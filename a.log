@@ -1,0 +1,18 @@
+OpenSSH_7.5p1, OpenSSL 1.0.2k  26 Jan 2017
+debug1: Reading configuration data /home/chzhang/.ssh/config
+debug1: /home/chzhang/.ssh/config line 8: Applying options for github.com
+debug1: /home/chzhang/.ssh/config line 19: Applying options for *
+debug2: resolving "github.com" port 22
+debug2: ssh_connect_direct: needpriv 0
+debug1: Connecting to github.com [192.30.255.112] port 22.
+debug1: Connection established.
+debug1: identity file /home/chzhang/.ssh/id_rsa type 1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/chzhang/.ssh/id_rsa-cert type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/chzhang/.ssh/id_rsa_qiao type -1
+debug1: key_load_public: No such file or directory
+debug1: identity file /home/chzhang/.ssh/id_rsa_qiao-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_7.5
+ssh_exchange_identification: read: Software caused connection abort
